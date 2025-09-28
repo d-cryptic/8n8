@@ -60,3 +60,12 @@ devbox add bun uv nodejs python direnv
 ## Create `.env` file
 
 - Referencing `.env.example` create `.env` file
+
+---
+
+# Installing packages and running the app
+
+```bash
+bun install
+bun run dev
+```

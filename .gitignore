@@ -1,2 +1,4 @@
 .env
 .direnv
+.venv
+node_modules
