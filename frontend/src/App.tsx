@@ -1,18 +1,20 @@
-import { Button } from '@/components/ui/button'
-import { useState } from 'react'
-import './App.css'
+import { Navigate, Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import Layout from "./components/Layout";
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div className="flex min-h-svh flex-col items-center justify-center">
-        <Button onClick={() => setCount(count + 1)}>Click Me!</Button>
-        <p>Count: {count}</p>
-      </div>
-    </>
-  )
+	return (
+		<Router>
+			<div className="min-h-screen bg-gray-50">
+				<Layout />
+				{/* <Routes>
+					<Route path="/" element={<Layout />}>
+                <Route index element={<Navigate to="/dashboard" replace />} />
+								<Route path="dashboard" element={<Dashboard />} />
+              </Route>
+				</Routes> */}
+			</div>
+		</Router>
+	)
 }
 
-export default App
+export default App;
