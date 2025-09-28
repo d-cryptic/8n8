@@ -1,0 +1,16 @@
+model User {
+	id String @id @default(auto()) @map("_id") @db.ObjectId
+	email String @unique
+	name String?
+	password String?
+	googleId String? @unique
+	isVerified Boolean @default(false)
+	createdAt DateTime @default(now())
+	updatedAt DateTime @updatedAt
+	workflows Workflow[]
+	credentials Credential[]
+	executions Execution[]
+	webhooks Webhook[]
+
+	@@map("users")
+}
