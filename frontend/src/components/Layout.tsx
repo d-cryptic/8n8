@@ -1,15 +1,18 @@
 import {
-	Key,
-	LayoutDashboard,
-	LogOut,
-	Play,
-	Plus,
-	Workflow
+  Key,
+  LayoutDashboard,
+  LogOut,
+  Play,
+  Plus,
+  Workflow
 } from 'lucide-react'
 import React from "react"
 import { Outlet, useLocation, useNavigate, type NavigateFunction } from "react-router-dom"
+import { useAuth } from '../contexts/AuthContext'
+import { Button } from './ui/button'
 
 const Layout: React.FC = () => {
+  const {user, logout} = useAuth()
 	const navigate: NavigateFunction = useNavigate()
 	const location = useLocation()
 
@@ -19,6 +22,11 @@ const Layout: React.FC = () => {
     { name: 'Credentials', href: '/credentials', icon: Key },
     { name: 'Executions', href: '/executions', icon: Play },
 	]
+
+  const handleLogout = () => {
+    logout()
+    navigate('/login')
+  }
 
 	const isActive = (path: string) => {
 		if (path === '/workflow') {
@@ -57,7 +65,36 @@ const Layout: React.FC = () => {
                 </button>
               )
             })}
-          </nav>
+        </nav>
+        
+        {/* User info and logout */}
+        <div className="border-t border-gray-200 p-4">
+            <div className="flex items-center">
+              <div className="flex-shrink-0">
+                <div className="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center">
+                  <span className="text-sm font-medium text-white">
+                    {user?.name?.charAt(0) || user?.email?.charAt(0) || 'U'}
+                  </span>
+                </div>
+              </div>
+              <div className="ml-3 flex-1 min-w-0">
+                <p className="text-sm font-medium text-gray-900 truncate">
+                  {user?.name || 'User'}
+                </p>
+                <p className="text-xs text-gray-500 truncate">
+                  {user?.email}
+                </p>
+              </div>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={handleLogout}
+                className="ml-2"
+              >
+                <LogOut className="h-4 w-4" />
+              </Button>
+            </div>
+          </div>
 
 				{/* Main */}
 				 <div className="pl-64">
