@@ -6,6 +6,12 @@ import helmet from "helmet";
 
 import ratelimiter from "./utils/ratelimiter";
 
+import authRoutes from "./routes/auth";
+import credentialRoutes from "./routes/credential";
+import executionRoutes from "./routes/execution";
+import webhookRoutes from "./routes/webhook";
+import workflowRoutes from "./routes/workflow";
+
 dotenv.config();
 
 const app: Application = express();
@@ -33,6 +39,12 @@ app.get("/health", (req, res) => {
   });
 });
 
+app.use("/api/auth", authRoutes);
+app.use("/api/workflow", workflowRoutes);
+app.use("/api/credential", credentialRoutes);
+app.use("/api/webhook", webhookRoutes);
+app.use("/api/execution", executionRoutes);
+
 // Error handlers
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   console.error("Error:", err);
@@ -44,9 +56,9 @@ app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   });
 });
 
-// app.use("*", (req, res) => {
-//   res.status(404).json({ error: "Route not found" });
-// });
+app.use("*", (req, res) => {
+  res.status(404).json({ error: "Route not found" });
+});
 
 // Graceful shutdown
 process.on("SIGINT", async () => {
