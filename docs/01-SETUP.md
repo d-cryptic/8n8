@@ -67,5 +67,8 @@ devbox add bun uv nodejs python direnv
 
 ```bash
 bun install
-bun run dev
+bun run dev # for frontend
+cd backend && bun install && bun run dev # for backend
+npx prisma generate # to generate prisma schemas
 ```
+

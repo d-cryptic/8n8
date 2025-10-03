@@ -4,12 +4,12 @@ import { useNavigate, useParams } from "react-router-dom"
 import {
   addEdge,
   Background,
-  Connection,
+  type Connection,
   Controls,
-  Edge,
+  type Edge,
   MiniMap,
-  Node,
-  NodeTypes,
+  type Node,
+  type NodeTypes,
   ReactFlow,
   useEdgesState,
   useNodesState

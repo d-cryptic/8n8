@@ -94,7 +94,7 @@ export class TelegramService {
   async getUpdates(offset?: number, limit: number = 100): Promise<any> {
     try {
       const response = await axios.get(
-        `https://api.telegram.org/bot${this.botToken}/getUpdates`,,
+        `https://api.telegram.org/bot${this.botToken}/getUpdates`,
         {
           params: {
             offset,
@@ -109,13 +109,14 @@ export class TelegramService {
         error.response?.data || error.message,
       );
       throw new Error(
-        `Failed to get updates: ${error.response?.data?.description || error.message
+        `Failed to get updates: ${
+          error.response?.data?.description || error.message
         }`,
       );
     }
   }
 
-  async setWebhook(url: string, secretToken?: string): Promise<any>{
+  async setWebhook(url: string, secretToken?: string): Promise<any> {
     try {
       const response = await axios.post(
         `https://api.telegram.org/bot${this.botToken}/setWebhook`,
@@ -131,7 +132,8 @@ export class TelegramService {
         error.response?.data || error.message,
       );
       throw new Error(
-        `Failed to set webhook: ${error.response?.data?.description || error.message
+        `Failed to set webhook: ${
+          error.response?.data?.description || error.message
         }`,
       );
     }
@@ -149,7 +151,8 @@ export class TelegramService {
         error.response?.data || error.message,
       );
       throw new Error(
-        `Failed to delete webhook: ${error.response?.data?.description || error.message
+        `Failed to delete webhook: ${
+          error.response?.data?.description || error.message
         }`,
       );
     }
@@ -185,7 +188,8 @@ export class TelegramService {
         error.response?.data || error.message,
       );
       throw new Error(
-        `Failed to send photo: ${error.response?.data?.description || error.message
+        `Failed to send photo: ${
+          error.response?.data?.description || error.message
         }`,
       );
     }
@@ -195,7 +199,7 @@ export class TelegramService {
     chatId: string,
     document: string | Buffer,
     caption?: string,
-  ): Promise<any>{
+  ): Promise<any> {
     try {
       const formData = new FormData();
       formData.append("chat_id", chatId);
@@ -220,7 +224,8 @@ export class TelegramService {
         error.response?.data || error.message,
       );
       throw new Error(
-        `Failed to send document: ${error.response?.data?.description || error.message
+        `Failed to send document: ${
+          error.response?.data?.description || error.message
         }`,
       );
     }

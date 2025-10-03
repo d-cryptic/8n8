@@ -56,10 +56,6 @@ app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   });
 });
 
-app.use("*", (req, res) => {
-  res.status(404).json({ error: "Route not found" });
-});
-
 // Graceful shutdown
 process.on("SIGINT", async () => {
   console.log("Shutting down gracefully...");
