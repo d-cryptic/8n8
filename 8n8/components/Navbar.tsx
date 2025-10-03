@@ -38,7 +38,7 @@ export function FloatingNavbar() {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
-            <AnimatedThemeToggler/>
+            <AnimatedThemeToggler className="cursor-pointer text-md"/>
             <NavbarButton variant="secondary">Login</NavbarButton>
             <NavbarButton variant="primary">Sign Up</NavbarButton>
           </div>
@@ -49,7 +49,7 @@ export function FloatingNavbar() {
           <MobileNavHeader>
             <NavbarLogo />
             <div className="flex items-center gap-4">
-              <AnimatedThemeToggler />
+              <AnimatedThemeToggler className="cursor-pointer text-md"/>
               <MobileNavToggle
               isOpen={isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
