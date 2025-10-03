@@ -1,3 +1,4 @@
+import { Features } from "@/components/Features";
 import HeroSection from "@/components/hero-section";
 import { FloatingNavbar } from "@/components/Navbar";
 import Image from "next/image";
@@ -8,7 +9,7 @@ export default function Home() {
       <FloatingNavbar />
       <HeroSection />
       {/* How it works */}
-      {/* Features */}
+      <Features />
       {/* Pricing */}
       {/* Footer */}
     </div>
