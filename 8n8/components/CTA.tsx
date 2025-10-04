@@ -26,7 +26,7 @@ const CTA = ({
   },
 }: Cta10Props) => {
   return (
-    <section className="py-16 w-3/4 mx-auto">
+    <section className="py-8 w-3/4 mx-auto">
       <div className="container">
         <div className="bg-muted flex w-full flex-col gap-16 overflow-hidden rounded-lg p-8 md:rounded-xl lg:flex-row lg:items-center lg:p-12">
           <div className="flex-1">
