@@ -49,7 +49,8 @@ export default function HeroSectionOne() {
           }}
           className="relative z-10 mx-auto max-w-xl py-4 text-center text-lg font-normal text-neutral-600 dark:text-neutral-400"
         >
-           A powerful, open-source workflow automation platform built from the ground up. Connect apps, services, and APIs with ease - no code required.
+        A powerful, open-source workflow automation platform built from the ground up.
+        Connect apps, services, and APIs with ease - no code required.
         </motion.p>
         <motion.div
           initial={{
