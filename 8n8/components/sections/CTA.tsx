@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
 
 interface Cta10Props {
-  heading: string;
-  description: string;
+  heading?: string;
+  description?: string;
   buttons?: {
     primary?: {
       text: string;

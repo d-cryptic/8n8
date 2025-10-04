@@ -11,7 +11,7 @@ import {
   TwitterIcon,
 } from "lucide-react";
 import Link from "next/link";
-import { NavbarLogo } from "./ui/resizable-navbar";
+import { NavbarLogo } from "../ui/resizable-navbar";
 
 const footerLinks = [
   {
@@ -30,7 +30,7 @@ const footerLinks = [
 
 const FooterSection = () => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col w-3/4 mx-auto">
       <div className="grow bg-muted" />
       <footer className="border-t">
         <div className="max-w-(--breakpoint-xl) mx-auto">

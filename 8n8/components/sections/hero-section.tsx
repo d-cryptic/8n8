@@ -2,7 +2,7 @@
 
 
 import { motion } from "motion/react";
-import { HeroImage } from "./hero-image";
+import { HeroImage } from "../animations/hero-image";
 
 export default function HeroSectionOne() {
   return (

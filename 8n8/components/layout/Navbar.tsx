@@ -1,5 +1,6 @@
 "use client";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
+import { useState } from "react";
 import {
   MobileNav,
   MobileNavHeader,
@@ -10,8 +11,7 @@ import {
   NavbarLogo,
   NavBody,
   NavItems,
-} from "@/components/ui/resizable-navbar";
-import { useState } from "react";
+} from "../ui/resizable-navbar";
 
 export function FloatingNavbar() {
   const navItems = [
