@@ -14,6 +14,7 @@ import {
   InputOTPSlot,
 } from "@/components/ui/input-otp"
 import { cn } from "@/lib/utils"
+import Link from "next/link"
 import { NavbarLogo } from "./ui/resizable-navbar"
 
 export function OTPForm({ className, ...props }: React.ComponentProps<"div">) {
@@ -22,15 +23,15 @@ export function OTPForm({ className, ...props }: React.ComponentProps<"div">) {
       <form>
         <FieldGroup>
           <div className="flex flex-col items-center gap-2 text-center">
-            <a
-              href="#"
+            <Link
+              href="/"
               className="flex flex-col items-center gap-2 font-medium"
             >
               <div className="flex size-8 items-center justify-center rounded-md">
                 <NavbarLogo />
               </div>
               <span className="sr-only">Acme Inc.</span>
-            </a>
+            </Link>
             <h1 className="text-xl font-bold">Enter verification code</h1>
             <FieldDescription>
               We sent a 6-digit code to your email address
